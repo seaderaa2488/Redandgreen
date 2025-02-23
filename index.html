@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Red Green Light App</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.5s;
+    }
+    .red {
+      background-color: red;
+      color: white;
+    }
+    .green {
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body class="red">
+  <h1 id="lightText">Red Light</h1>
+  <script>
+    let isRed = true;
+    setInterval(() => {
+      document.body.className = isRed ? 'green' : 'red';
+	      document.getElementById('lightText').textContent = isRed ? 'Green Light' : 'Red Light';
+      isRed = !isRed;
+    }, 2000);
+  </script>
+</body>
+</html>
